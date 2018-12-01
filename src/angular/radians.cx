@@ -1,0 +1,6 @@
+package math
+
+// Convert angle deg from radians to degrees.
+func radians(deg f64) (rad f64) {
+	rad = f64.mul(deg, f64.div(PI, 180.0D))
+}

@@ -1,0 +1,146 @@
+package math
+
+/* Mathematical constants */
+
+// The mathematical constant pi with 10 decimals precision.
+var PI f64 = 3.1415926536D
+
+// The mathematical constant e with 10 decimals precision.
+var E f64 = 2.7182818284D
+
+
+
+/* Angular functions */
+
+// Convert angle rad from radians to degrees.
+func degrees(rad f64) (deg f64) {
+	deg = f64.mul(rad, f64.div(180.0D, PI))
+}
+
+// Convert angle deg from radians to degrees.
+func radians(deg f64) (rad f64) {
+	rad = f64.mul(deg, f64.div(PI, 180.0D))
+}
+
+
+/* Power and Logarithmic funcions */
+// Calculates a raised to the power of b.
+func pow(base f64, exp i64) (result f64) {
+	if i64.eq(exp, 0L) {
+		result = 1.0D;
+	
+	} else {
+		result = f64.mul(pow(base, i64.div(exp, 2L)), pow(base, i64.div(exp, 2L)));
+		if (odd(exp)) {
+			result = f64.mul(base, result);
+		}
+	}
+
+	if i64.lt(exp, 0L) {
+		result = f64.div(result, 1.0D);
+	}
+	return result;
+}
+
+func pow10(exp i64) (result f64) {
+	result = pow(10.0D, exp);
+}
+
+
+/* Number representation functions */
+// Returns the absolte value of n.
+func abs(n f64) (result f64) {
+	if gteq(n, 0.0D) {
+		result = n;
+	} else {
+		result = f64.sub(0.0D, n);
+	}
+	return result;
+}
+
+// Returns the inverse value of n.
+func inv(n f64) (result f64) {
+	result = f64.sub(0.0D, n);
+}
+
+// Returns the largest integer value less than or equal to x.
+func floor(n f64) (result i64) {
+	if f64.gteq(n, 0.0D) {
+		result = f64.i64(n)
+
+	} else {
+		if (f64.eq(n, i64.f64(f64.i64(n)))) {
+			result = f64.i64(n)
+		} else {
+			result = i64.sub(f64.i64(n), 1L)
+		}
+	}
+	
+	return result;
+}
+
+// Returns the smallest integer value greater than or equal to x.
+func ceil(n f64) (result i64) {
+	if (f64.eq(n, i64.f64(f64.i64(n)))) {
+		result = f64.i64(n)
+	
+	} else {
+		if f64.gt(n, 0.0D) {
+			result = i64.add(f64.i64(n), 1L)
+		} else {
+			result = f64.i64(n)
+		}
+	}
+
+	return result;
+}
+
+func remainder(num i64, divisor i64) (remainder i64) {
+	if i64.eq(divisor, 0L) {
+		remainder = num;
+	} else {
+		remainder = i64.sub(num, i64.mul(divisor, i64.div(num, divisor)))
+	}
+}
+
+func odd(num i64) (is_odd bool) {
+	is_odd = i64.eq(mod(num, 2L), 1L)
+}
+
+func even(num i64) (is_even bool) {
+	is_even = i64.eq(mod(num, 2L), 0L)
+}
+
+
+/* Other functions */
+func sum(slice []f64) (result f64) {
+	result = 0.0D;
+	for i:=0; i<len(slice); i++ {
+		result = f64.add(result, iterable[i])
+	}
+	return result;
+}
+
+func min(x f64, y f64) (result f64) {
+	if f64.lteq(x, y) {
+		result = x;
+	} else {
+		result = Y;
+	}
+}
+
+func max(x f64, y f64) (result f64) {
+	if f64.gteq(x, y) {
+		result = x;
+	} else {
+		result = Y;
+	}
+}
+
+func factorial(n i64) (result i64) {
+	if i64.eq(n, 0L) {
+		result = 1L;
+	} else {
+		result = i64.mul(n, factorial(i64.sub(n, 1L)))
+	}
+}

@@ -1,0 +1,4 @@
+package math
+
+// The mathematical constant e with 10 decimals precision.
+var E f64 = 2.7182818284D

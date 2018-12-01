@@ -1,0 +1,19 @@
+package math
+
+func pow(base f64, exp i64) (result f64) {
+	if i64.eq(exp, 0L) {
+		result = 1.0D;
+	
+	} else {
+		result = f64.mul(pow(base, i64.div(exp, 2L)), pow(base, i64.div(exp, 2L)));
+		if (odd(exp)) {
+			result = f64.mul(base, result);
+		}
+	}
+	return result;
+}
+
+func pow10(exp i64) (result f64) {
+	result = pow(10.0D, exp);
+	return result;
+}
