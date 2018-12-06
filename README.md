@@ -157,7 +157,7 @@ func main() {
 }
 ```
 
-## Number representation functions.
+## Trigonometric functions.
 Work in progress...
 
 ## Contributing

@@ -1,5 +1,5 @@
 package math
-
+/*
 // FIXME Taylor Series inificient
 func atan(x f64, precision i64) (result f64) {
 	if i64.lteq(precision, 0L) {
@@ -9,4 +9,4 @@ func atan(x f64, precision i64) (result f64) {
 		result = (pow(-1.0D, precision) * ((pow(x, 2L*precision + 1L)) / (2L*precision + 1L))) + atan(x, i64.sub(precision, 1L))
 	}
 	f64.print(result)
-}
+}*/

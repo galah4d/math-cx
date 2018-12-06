@@ -116,7 +116,7 @@ func even(num i64) (is_even bool) {
 func sum(slice []f64) (result f64) {
 	result = 0.0D;
 	for i:=0; i<len(slice); i++ {
-		result = f64.add(result, iterable[i])
+		result = f64.add(result, slice[i])
 	}
 	return result;
 }
@@ -125,7 +125,7 @@ func min(x f64, y f64) (result f64) {
 	if f64.lteq(x, y) {
 		result = x;
 	} else {
-		result = Y;
+		result = y;
 	}
 }
 
@@ -133,7 +133,7 @@ func max(x f64, y f64) (result f64) {
 	if f64.gteq(x, y) {
 		result = x;
 	} else {
-		result = Y;
+		result = y;
 	}
 }
 

@@ -1,5 +1,6 @@
 package math
 
+// Calculates a raised to the power of b.
 func pow(base f64, exp i64) (result f64) {
 	if i64.eq(exp, 0L) {
 		result = 1.0D;
@@ -10,10 +11,13 @@ func pow(base f64, exp i64) (result f64) {
 			result = f64.mul(base, result);
 		}
 	}
+
+	if i64.lt(exp, 0L) {
+		result = f64.div(result, 1.0D);
+	}
 	return result;
 }
 
 func pow10(exp i64) (result f64) {
 	result = pow(10.0D, exp);
-	return result;
 }
