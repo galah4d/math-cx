@@ -1,6 +1,0 @@
-package math
-
-// Convert angle rad from radians to degrees.
-func degrees(rad f64) (deg f64) {
-	deg = f64.mul(rad, f64.div(180.0D, PI))
-}

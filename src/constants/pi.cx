@@ -1,4 +1,0 @@
-package math
-
-// The mathematical constant pi with 10 decimals precision.
-var PI f64 = 3.1415926536D
